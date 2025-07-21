@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    /* Language features & target */
+    "target": "ES2020",
+    "module": "ESNext",      
+    "moduleResolution": "Node",
+    "lib": ["ES2020"],
+
+    /* Output */
+    "outDir": "./dist",
+    "rootDir": "src", 
+    "declaration": true,
+    "emitDeclarationOnly": false,
+
+    /* Interop and tools */
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    /* Type system checks */
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Paths & module aliases */
+    "paths": {
+      "@utils/*": ["./src/*"]
+    }, 
+
+    "typeRoots": ["./node_modules/@types", "./types"],
+
+    /* Types included globally */
+    "types": ["node"]
+
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

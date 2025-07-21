@@ -1,0 +1,18 @@
+# Exclusions pour npm
+.git
+.github
+.vscode
+node_modules
+tests
+example
+*.test.js
+*.test.ts
+*.log
+*.zip
+*.md.bak
+.env
+.env.*
+TODO*
+src/
+tsconfig.json
+dist/types.js

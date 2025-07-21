@@ -1,0 +1,60 @@
+{
+  "name": "vite-plugin-image-optimize",
+  "version": "1.0.0",
+  "description": "Vite plugin that generates WebP images and optimizes all image assets during the build process for better performance.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && node ./scripts/fix-extensions.js",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "image",
+    "image-optimize",
+    "image-compression",
+    "webp",
+    "imagemin",
+    "vite-plugin-webp",
+    "vite-plugin-image-optimize"
+  ],
+  "author": "Effeilo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.9",
+    "globby": "^13.2.2",
+    "minimatch": "^9.0.3",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.2"
+  },
+  "dependencies": {
+    "imagemin": "^9.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "imagemin-webp": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Effeilo/vite-plugin-image-optimize"
+  },
+  "bugs": {
+    "url": "https://github.com/Effeilo/vite-plugin-image-optimize/issues"
+  },
+  "homepage": "https://github.com/Effeilo/vite-plugin-image-optimize"
+}
