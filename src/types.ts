@@ -7,50 +7,49 @@ export interface ImageOptimizeOptions {
    * Compression quality for JPEG images (0–100).
    * Default: 80
    */
-
   jpegQuality?: number
 
   /**
-   * Compression quality range for PNG images.
-   * Each value is between 0 (worst) and 1 (best).
-   * Default: [0.6, 0.8]
+   * Compression quality for PNG images (0–100).
+   * Default: 80
    */
-
-  pngQuality?: [number, number]
+  pngQuality?: number
 
   /**
    * Compression quality for WebP output (0–100).
    * Default: 75
    */
-
   webpQuality?: number
 
   /**
-   * Whether to enable WebP generation during pre-build.
+   * Compression quality for AVIF output (0–100).
+   * Lower values produce smaller files. 50 is a good starting point.
+   * Default: 50
+   */
+  avifQuality?: number
+
+  /**
+   * Whether to generate WebP versions of JPEG/PNG images during pre-build.
    * Default: true
    */
-
   webpEnable?: boolean
 
   /**
-   * File extensions to include in WebP generation.
-   * Default: ['jpeg', 'png']
+   * Whether to generate AVIF versions of JPEG/PNG images during pre-build.
+   * Default: true
    */
-
-  webpFormats?: ('jpeg' | 'png')[]
+  avifEnable?: boolean
 
   /**
-   * Glob patterns of files or directories to exclude from processing.
+   * Glob patterns of files or directories to exclude from all processing.
    * Default: []
    */
-
-  webpExclude?: string[]
+  exclude?: string[]
 
   /**
    * Whether to log detailed per-file processing output.
    * If false, only summary messages are shown.
    * Default: true
    */
-  
   logListings?: boolean
 }

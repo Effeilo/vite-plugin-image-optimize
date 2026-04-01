@@ -1,4 +1,5 @@
 import { globby } from 'globby'
+import fs from 'fs/promises'
 
 /**
  * Recursively collects all image files matching the provided extensions
@@ -9,23 +10,34 @@ import { globby } from 'globby'
  * @param {string[]} [exclude=[]] - Optional glob patterns to exclude from results
  * @returns {Promise<string[]>} - List of absolute file paths to matching image files
  */
-
 export async function getAllImages(
   root: string,
   exts: string[],
   exclude: string[] = []
 ): Promise<string[]> {
-  // Build glob pattern like '**/*.{jpg,png,webp}'
   const patterns = [`**/*.{${exts.map(e => e.replace('.', '')).join(',')}}`]
-
-  // Run globby with the pattern, targeting absolute paths and excluding specified patterns
-  const files = await globby(patterns, {
-    cwd: root,        // Base directory for glob matching
-    absolute: true,   // Return absolute paths
-    ignore: exclude,  // Exclude specified paths
+  return globby(patterns, {
+    cwd: root,
+    absolute: true,
+    ignore: exclude,
   })
-  // Return the list of matching image files
-  return files
+}
+
+/**
+ * Returns true if `src` is newer than `dest`, or if `dest` does not exist.
+ * Used to skip re-generating modern format files that are already up to date.
+ *
+ * @param {string} src - Path to the source file
+ * @param {string} dest - Path to the output file
+ * @returns {Promise<boolean>}
+ */
+export async function fileIsNewer(src: string, dest: string): Promise<boolean> {
+  try {
+    const [srcStat, destStat] = await Promise.all([fs.stat(src), fs.stat(dest)])
+    return srcStat.mtimeMs > destStat.mtimeMs
+  } catch {
+    return true
+  }
 }
 
 /**
@@ -34,8 +46,6 @@ export async function getAllImages(
  * @param {number} bytes - Size in bytes
  * @returns {string} - Size formatted in kilobytes with one decimal place
  */
-
 export function formatSize(bytes: number): string {
-  // Convert bytes to kilobytes and format with 1 decimal place
   return `${(bytes / 1024).toFixed(1)} KB`
 }

@@ -2,13 +2,13 @@
   "compilerOptions": {
     /* Language features & target */
     "target": "ES2020",
-    "module": "ESNext",      
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["ES2020"],
 
     /* Output */
     "outDir": "./dist",
-    "rootDir": "src", 
+    "rootDir": "src",
     "declaration": true,
     "emitDeclarationOnly": false,
 
@@ -25,16 +25,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Paths & module aliases */
-    "paths": {
-      "@utils/*": ["./src/*"]
-    }, 
-
-    "typeRoots": ["./node_modules/@types", "./types"],
-
     /* Types included globally */
     "types": ["node"]
-
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
