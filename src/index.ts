@@ -134,13 +134,13 @@ export default function imageOptimizePlugin(options: ImageOptimizeOptions = {}):
           let optimized: Buffer
 
           if (ext === '.jpg' || ext === '.jpeg') {
-            optimized = await sharp(file).jpeg({ quality: jpegQuality, mozjpeg: true }).toBuffer()
+            optimized = await sharp(original).jpeg({ quality: jpegQuality, mozjpeg: true }).toBuffer()
           } else if (ext === '.png') {
-            optimized = await sharp(file).png({ quality: pngQuality, compressionLevel: 9 }).toBuffer()
+            optimized = await sharp(original).png({ quality: pngQuality, compressionLevel: 9 }).toBuffer()
           } else if (ext === '.webp') {
-            optimized = await sharp(file).webp({ quality: webpQuality }).toBuffer()
+            optimized = await sharp(original).webp({ quality: webpQuality }).toBuffer()
           } else if (ext === '.avif') {
-            optimized = await sharp(file).avif({ quality: avifQuality }).toBuffer()
+            optimized = await sharp(original).avif({ quality: avifQuality }).toBuffer()
           } else if (ext === '.svg') {
             const svgContent = await fs.readFile(file, 'utf-8')
             const result = svgoOptimize(svgContent, { multipass: true })

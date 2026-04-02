@@ -15,6 +15,18 @@ et ce projet respecte le [versionnage sémantique](https://semver.org/lang/fr/).
 
 <br>
 
+## [2.0.1] – 2026-04-02
+
+### 🐛 Corrigé
+
+- **Erreur de verrouillage de fichier sous Windows lors du post-build :** `sharp(file)` gardait un descripteur de fichier natif ouvert sous Windows, provoquant une erreur `UNKNOWN` quand `fs.writeFile` tentait d'ouvrir le même fichier en écriture. Corrigé en passant le buffer déjà chargé (`sharp(original)`) au lieu du chemin du fichier, afin que sharp ne conserve aucun verrou sur le fichier de sortie.
+
+<br>
+
+---
+
+<br>
+
 ## [2.0.0] – 2026-03-29
 
 ### ⚠️ Changements majeurs (breaking)

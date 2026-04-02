@@ -15,6 +15,18 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 <br>
 
+## [2.0.1] – 2026-04-02
+
+### 🐛 Fixed
+
+- **Windows file locking error in post-build phase:** `sharp(file)` kept a native file handle open on Windows, causing an `UNKNOWN` error when `fs.writeFile` tried to open the same file for writing. Fixed by passing the already-loaded buffer (`sharp(original)`) instead of the file path, so sharp never holds a lock on the output file.
+
+<br>
+
+---
+
+<br>
+
 ## [2.0.0] – 2026-03-29
 
 ### ⚠️ Breaking Changes
