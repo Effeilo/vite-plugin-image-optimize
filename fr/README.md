@@ -75,6 +75,24 @@ export default defineConfig({
 
 Pour la documentation complète, consultez [docs/fr/index.md](../docs/fr/index.md).
 
+### Guide
+
+- [Introduction](guide/introduction.md) : ce que c'est, pourquoi ça existe, l'approche en deux phases
+- [Démarrage rapide](guide/getting-started.md) : installation et configuration dans `vite.config`
+- [Fonctionnement](guide/how-it-works.md) : génération pré-build, compression post-build, builds incrémentaux
+- [Utilisation HTML](guide/html-usage.md) : servir AVIF/WebP avec fallback via `<picture>`
+
+### Référence
+
+- [Options](reference/options.md) : tableau complet des options avec détails et valeurs par défaut
+- [Hooks](reference/hooks.md) : `configResolved`, `buildStart`, `closeBundle`
+- [Utilitaires](reference/utils.md) : `getAllImages`, `fileIsNewer`, `formatSize`
+
+### Référence additionnelle
+
+- [Compatibilité](compatibility.md) : Node.js, versions Vite, support navigateur des formats d'image
+- [Contribuer](contributing.md) : signaler un bug, proposer une amélioration, soumettre une PR
+
 ## Licence
 
-MIT © 2025 [Effeilo](https://github.com/Effeilo)
+MIT © 2026 [Effeilo](https://github.com/Effeilo)
