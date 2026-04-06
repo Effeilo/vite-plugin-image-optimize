@@ -168,7 +168,7 @@ export default function imageOptimizePlugin(options: ImageOptimizeOptions = {}):
             ? ((1 - sizeAfter / sizeBefore) * 100).toFixed(1)
             : '0.0'
           console.log(
-            `  ${path.relative(distImgDir, file).replace(/\\/g, '/')} — ${formatSize(sizeBefore)} → ${formatSize(sizeAfter)} (${percent}% saved)`
+            `  ${path.relative(distImgDir, file).replace(/\\/g, '/')}, ${formatSize(sizeBefore)} → ${formatSize(sizeAfter)} (${percent}% saved)`
           )
         }
         if (totalBefore > 0) {

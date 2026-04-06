@@ -6,7 +6,15 @@
 
 # BrowserUX Image Optimize
 
-`vite-plugin-image-optimize` is a Vite plugin that automatically generates `.avif` and `.webp` versions of your images and optimizes all your JPG, PNG, SVG, WebP, and AVIF files during production builds.
+**Automatically optimize your images for faster load times and maximum performance.**
+
+BrowserUX Image Optimize is a configurable Vite plugin that generates `.avif` and `.webp` versions of your images before build, then intelligently compresses all JPG, PNG, SVG, AVIF and WebP files after build. With a simple configuration, you control quality, target formats, and exclusions. Perfect for reducing asset weight in production without visible quality loss, and boosting your Lighthouse performance scores.
+
+- [Project website](https://browserux.com/image-optimize/)
+- [Documentation](./docs/index.md)
+- [Changelog](./CHANGELOG.md)
+
+<br>
 
 [![npm version](https://img.shields.io/npm/v/vite-plugin-image-optimize.svg)](https://www.npmjs.com/package/vite-plugin-image-optimize)
 ![vite compatibility](https://img.shields.io/badge/Vite-4%2B%20%7C%205%2B%20%7C%206%2B%20%7C%207%2B-646CFF.svg?logo=vite&logoColor=white)

@@ -39,7 +39,7 @@ et ce projet respecte le [versionnage sémantique](https://semver.org/lang/fr/).
 ### ✨ Ajouté
 
 - **Génération AVIF :** nouvelles options `avifEnable` (défaut : `true`) et `avifQuality` (défaut : `50`). Le plugin génère maintenant `.avif` et `.webp` depuis chaque JPEG/PNG source.
-- **Pré-build incrémental :** les fichiers de sortie (`.avif`, `.webp`) sont ignorés s'ils existent déjà et sont plus récents que leur source — plus de ré-encodage inutile sur les builds successifs.
+- **Pré-build incrémental :** les fichiers de sortie (`.avif`, `.webp`) sont ignorés s'ils existent déjà et sont plus récents que leur source, plus de ré-encodage inutile sur les builds successifs.
 - **Traitement parallèle :** la génération pré-build et la compression post-build sont entièrement parallélisées avec `Promise.all` pour des builds plus rapides sur les gros projets.
 - **Résolution de chemins précise :** un hook `configResolved` lit désormais `config.publicDir` et `config.build.outDir` depuis Vite, au lieu de se baser sur des chemins hardcodés (`public/img`, `dist/img`) relatifs à `process.cwd()`.
 - **Build uniquement :** `apply: 'build'` garantit que les hooks du plugin ne s'enregistrent jamais dans le serveur de dev Vite.
@@ -57,7 +57,7 @@ et ce projet respecte le [versionnage sémantique](https://semver.org/lang/fr/).
 
 ### 🔄 Modifié
 
-- Script `build` simplifié en `"tsc"` — `scripts/fix-extensions.js` n'est plus nécessaire.
+- Script `build` simplifié en `"tsc"`, `scripts/fix-extensions.js` n'est plus nécessaire.
 - Version minimale de Node.js portée à `18.17.0` (requis par sharp).
 
 <br>

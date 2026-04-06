@@ -39,7 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### ✨ Added
 
 - **AVIF generation:** new `avifEnable` (default: `true`) and `avifQuality` (default: `50`) options. The plugin now generates both `.avif` and `.webp` from each source JPEG/PNG.
-- **Incremental pre-build:** output files (`.avif`, `.webp`) are skipped if they already exist and are newer than their source image — no more redundant re-encoding on repeated builds.
+- **Incremental pre-build:** output files (`.avif`, `.webp`) are skipped if they already exist and are newer than their source image, no more redundant re-encoding on repeated builds.
 - **Parallel processing:** pre-build generation and post-build compression are now both fully parallelized with `Promise.all` for faster builds on large image sets.
 - **Accurate path resolution:** a `configResolved` hook now reads `config.publicDir` and `config.build.outDir` from Vite, instead of relying on hardcoded `public/img` and `dist/img` paths relative to `process.cwd()`.
 - **Build-only:** `apply: 'build'` ensures the plugin hooks never register in Vite's dev server.
@@ -57,7 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### 🔄 Changed
 
-- `build` script simplified to `"tsc"` — `scripts/fix-extensions.js` is no longer needed.
+- `build` script simplified to `"tsc"`, `scripts/fix-extensions.js` is no longer needed.
 - Minimum Node.js version bumped to `18.17.0` (required by sharp).
 
 <br>
